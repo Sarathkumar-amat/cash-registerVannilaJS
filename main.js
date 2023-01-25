@@ -5,14 +5,18 @@ const outputCoins=document.querySelectorAll(".output");
 const message=document.querySelector("#errorMessage");
 
 const coinArr=[2000,500,100,20,10,5,1];
+var bill=Number(billAmount.value);
+var cash=Number(cashGiven.value);
+console.log(typeof bill);
+console.log(typeof cash);
 checkButton.addEventListener("click", function checkFunction()
 {
    hideMessage();
    if(billAmount.value>0)
    {
-        if(cashGiven.value >= billAmount.value)
+        if(cash >= bill)
         {
-            const remainingVal=cashGiven.value-billAmount.value;
+            const remainingVal=cash-bill;
             coinFunction(remainingVal);
         }
         else{
@@ -28,12 +32,12 @@ checkButton.addEventListener("click", function checkFunction()
 function coinFunction(remainingVal)
 {
     //var remainingVal=cashGiven.value-billAmount.value;
-    console.log(remainingVal);
+    //console.log(remainingVal);
     for(var i=0;i<coinArr.length;i++)
     {  
         const coin=Math.trunc(remainingVal/coinArr[i]);
         remainingVal=remainingVal%coinArr[i];
-        console.log(coin);
+        //console.log(coin);
         outputCoins[i].innerHTML=coin;
     }
 }
