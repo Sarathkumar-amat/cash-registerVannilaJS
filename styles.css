@@ -1,0 +1,57 @@
+/* styles.css */
+/* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  } */
+:root {
+    --primary-color: #FFFFE8;
+  }
+  
+body{
+    background-color: var(--primary-color);
+}
+.container{
+    text-align: center;
+    margin: 4rem auto 7rem;
+}
+#CheckButton{
+    display: block;
+    border: none;
+    padding: 0.7rem 1rem;
+    background-color: aquamarine;
+    font-size: large;
+    cursor: pointer;
+    color: var(--primary-color);
+    outline: #fff;
+    margin: auto;
+}
+.input{
+    border: 2px solid;
+    padding: 0.6rem 1rem;
+    margin:1rem;
+}
+.input-label{
+    display: block;
+    align-items: center;
+    padding: 0.6rem 1rem;
+}
+hr{
+ border-style: dotted none none;
+ border-color: grey;
+ border-width: 5px;
+ width: 10%;
+}
+h1,h3{
+    color: #66bfbf;
+}
+.table-design{
+    border:2px solid;
+    margin:auto;
+    border-collapse: collapse;
+}
+td,th{
+    border: 2px solid;
+    border-collapse: collapse;
+    padding: 1rem;
+}
