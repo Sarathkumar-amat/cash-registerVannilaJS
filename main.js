@@ -1,21 +1,24 @@
-var checkButton = document.querySelector("#CheckButton");
+const checkButton = document.querySelector("#CheckButton");
 const billAmount=document.querySelector("#BillAmount");
 const cashGiven=document.querySelector("#CashGiven");
-var outputCoins=document.querySelectorAll(".output");
-var message=document.querySelector("#errorMessage");
+const outputCoins=document.querySelectorAll(".output");
+const message=document.querySelector("#errorMessage");
 
 const coinArr=[2000,500,100,20,10,5,1];
-checkButton.addEventListener("click",function checkFunction()
+checkButton.addEventListener("click", function checkFunction()
 {
+   hideMessage();
    if(billAmount.value>0)
    {
-        if(cashGiven.value<billAmount.value)
+        if(cashGiven.value >= billAmount.value)
         {
-            showMessage("Insufficient for your bill");
+            const remainingVal=cashGiven.value-billAmount.value;
+            coinFunction(remainingVal);
         }
         else{
-            var remainingVal=cashGiven.value-billAmount.value;
-            coinFunction(remainingVal);
+            // console.log(cashGiven.value-billAmount.value);
+            // console.log("insuff"+cashGiven.value+" "+billAmount.value);
+            showMessage("Insufficient for your bill");
         }
    } 
    else{
@@ -33,6 +36,9 @@ function coinFunction(remainingVal)
         console.log(coin);
         outputCoins[i].innerHTML=coin;
     }
+}
+function hideMessage() {
+    message.style.display = "none";
 }
 function showMessage(msg)
 {
