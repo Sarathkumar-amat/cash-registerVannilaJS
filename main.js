@@ -5,14 +5,14 @@ const outputCoins=document.querySelectorAll(".output");
 const message=document.querySelector("#errorMessage");
 
 const coinArr=[2000,500,100,20,10,5,1];
-var bill=Number(billAmount.value);
-var cash=Number(cashGiven.value);
-console.log(typeof bill);
-console.log(typeof cash);
+
 checkButton.addEventListener("click", function checkFunction()
 {
-   hideMessage();
-   if(billAmount.value>0)
+    hideMessage();
+    var bill=Number(billAmount.value);
+    var cash=Number(cashGiven.value);
+    console.log(bill);
+   if(bill>0)
    {
         if(cash >= bill)
         {
